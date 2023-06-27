@@ -25,7 +25,7 @@
   align-items: center;
   border-radius: 10px;
   margin: 30px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Add the shadow effect */
+  box-shadow: 4px 4px 10px rgba(58, 92, 136, 0.4);
 }
 
 .carousel-item > img {
