@@ -1,0 +1,11 @@
+<div class="carousel">
+  <button (click)="previousSlide()"><</button>
+  <div class="carousel-item" *ngFor="let item of items; let i = index" [ngClass]="{ 'active': i === activeIndex }">
+    <img src="{{ item.image }}" alt="{{ item.title }}">
+    <div class="title-item">
+      <p>{{ item.title }}</p>
+    </div>
+  </div>
+  <button (click)="nextSlide()">></button>
+</div>
+
