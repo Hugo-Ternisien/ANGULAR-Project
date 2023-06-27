@@ -40,3 +40,6 @@
   flex-direction: column;
   justify-content: center;
 }
+.categories > h1 {
+  margin-left: 70px;
+}

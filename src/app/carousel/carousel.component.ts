@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarouselComponent implements OnInit {
   items = [
-    { id: 1, title: 'Pizza', image: "assets/pizza.jpeg" },
-    { id: 2, title: 'Sushi', image: 'assets/sushi.jpeg' },
-    { id: 3, title: 'Burger', image: 'assets/burger.jpeg' },
+    { id: 1, title: 'Pizza', image: "assets/pizza.jpg" },
+    { id: 2, title: 'Sushi', image: 'assets/sushi.jpg' },
+    { id: 3, title: 'Burger', image: 'assets/burger.jpg' },
   ];
 
   activeIndex = 0;
