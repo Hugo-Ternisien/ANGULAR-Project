@@ -29,14 +29,12 @@ export class CarouselComponent implements OnInit {
   nextSlide(): void {
     clearInterval(this.intervalId); // Clear the existing interval
     this.activeIndex = (this.activeIndex + 1) % this.items.length;
-    this.delay = 5000;
     this.startCarousel(); // Start a new interval
   }
 
   previousSlide(): void {
     clearInterval(this.intervalId); // Clear the existing interval
     this.activeIndex = (this.activeIndex - 1 + this.items.length) % this.items.length;
-    this.delay = 5000;
     this.startCarousel(); // Start a new interval
   }
 }
