@@ -1,2 +1,40 @@
-<app-address-search></app-address-search>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    width="70"
+    alt="Angular Logo"
+    src="https://s.tmimgcdn.com/scr/800x500/212900/logo-de-restaurant-cuillere-et-fourchette_212966-original.png"
+  />
+  <span>Find Restaurants</span>
+</div>
+<div class="content" role="main">
+    <app-search-bar (searchEvent)="performSearch($event)"></app-search-bar>
+    <app-address-search></app-address-search>
+  <div class="categories">
+    <h1>Categories</h1>
+    <app-carousel></app-carousel>
+  </div>
+
+  <div class="info">
+    <app-info-main></app-info-main>
+  </div>
+</div>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
 <router-outlet></router-outlet>
