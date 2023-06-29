@@ -37,7 +37,7 @@ export class AddressSearchComponent {
   validateAddress() {
     if (this.searchQuery) {
       const url = `/display-result-page?address=${encodeURIComponent(this.searchQuery)}`;
-      window.open(url, '_blank');
+      // window.open(url, '_blank');
     }
   }
 }
