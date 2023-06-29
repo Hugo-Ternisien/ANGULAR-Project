@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-address-search',
@@ -10,7 +11,7 @@ export class AddressSearchComponent {
   searchQuery: string = '';
   addressResults: string[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   searchAddress(event: any) {
     if (this.searchQuery && this.searchQuery.length >= 2) {
@@ -35,9 +36,13 @@ export class AddressSearchComponent {
   }
 
   validateAddress() {
+    // if (this.searchQuery) {
+    //   const url = `/display-result-page?address=${encodeURIComponent(this.searchQuery)}`;
+    //   window.open(url, '_blank');
+    // }
     if (this.searchQuery) {
-      const url = `/display-result-page?address=${encodeURIComponent(this.searchQuery)}`;
-      // window.open(url, '_blank');
+      const queryParams = { address: encodeURIComponent(this.searchQuery) };
+      this.router.navigate(['/display-result-page'], { queryParams });
     }
   }
 }
