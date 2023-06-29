@@ -11,6 +11,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { InfoMainComponent } from './info-main/info-main.component';
 import {NgOptimizedImage} from "@angular/common";
+import {RestaurantListComponentComponent} from "./restaurant-list-component/restaurant-list-component.component";
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {NgOptimizedImage} from "@angular/common";
     CarouselComponent,
     InfoMainComponent,
     AddressSearchComponent,
-    DisplayResultPageComponent
+    DisplayResultPageComponent,
+    RestaurantListComponentComponent
   ],
     imports: [
         BrowserModule,
