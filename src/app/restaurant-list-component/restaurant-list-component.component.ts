@@ -19,19 +19,19 @@ export class RestaurantListComponentComponent {
   }
 
   public searchRestaurants(): void {
-    const apiKey = 'EqKjOzEqa9C6yy3lNnnrDyk8TmIPFK0dM4QsJGaMwkz97QgIN1JaV9OiZ_zT5sZYT161q5a8rbLdXnrDL9j2cC5a_iFF1UrekFSJ_Jb5TgLxD2SNY8-T7gUq8iqcZHYx';
+    const apiKey = 'WKa6NJmc_RrJCcmn04EPUnKi7wjXH_Umk5FOlYgszN7GYOFb2RGV7-RXqEYc2dJNoXspdUU8sOzq9-44Mr42dcanZ0KawyHqZZhbNN0csN6nWXBNP8qRSuw0hU-dZHYx';
     const apiUrl = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search';
-  
+
     const headers = new Headers();
     headers.append('Authorization', `Bearer ${apiKey}`);
-  
+
     const requestOptions: RequestInit = {
       method: 'GET',
       headers: headers
     };
-  
+
     const url = `${apiUrl}?term=restaurants&categories=${this.category}&location=Paris`;
-  
+
     fetch(url, requestOptions)
       .then(response => response.json())
       .then(data => {
