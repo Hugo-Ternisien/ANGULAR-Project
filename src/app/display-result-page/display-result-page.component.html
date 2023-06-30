@@ -5,7 +5,7 @@
       <p class="name">{{ restaurant.name }}</p>
       <p class="address">Adresse : {{ restaurant.location.display_address.join(', ') }}</p>
       <p class="price">Prix : {{ restaurant.price }}</p>
-      <p class="rating">Rating : {{ getStarRating(restaurant.rating) }}      {{restaurant.review_count}}</p> <!-- Call the helper function -->
+      <p class="rating">Note : {{ getStarRating(restaurant.rating) }}      {{restaurant.review_count}}</p> <!-- Call the helper function -->
     </div>
   </div>
 </div>

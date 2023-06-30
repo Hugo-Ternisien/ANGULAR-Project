@@ -1,7 +1,7 @@
 <div class="carousel">
   <button (click)="previousSlide()"><</button>
   <div class="carousel-item" *ngFor="let item of getVisibleItems(); let i = index"
-       [ngClass]="{ 'active': i === 1 }">
+       [ngClass]="{ 'active': i === 1 }" [routerLink]="['/', item.title.toLowerCase()]">
       <img src="{{ item.image }}" alt="{{ item.title }}">
     <div class="title-item">
       <p>{{ item.title }}</p>

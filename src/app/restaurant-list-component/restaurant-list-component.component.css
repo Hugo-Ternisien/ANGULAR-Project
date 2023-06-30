@@ -1,0 +1,52 @@
+.restaurants-list-div {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 4px 4px 10px rgba(58, 92, 136, 0.2);
+  width: 1220px;
+}
+
+.restaurants-item-div {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+
+.restaurant-img {
+  width: 200px;
+  height: 177.77px;
+  margin: 30px;
+  border-radius: 10px;
+}
+
+.restaurant-item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding-left: 80px;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 850;
+  color: #3a5c88;
+}
+
+.address {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.price {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.rating {
+  font-size: 15px;
+  font-weight: 500;
+}

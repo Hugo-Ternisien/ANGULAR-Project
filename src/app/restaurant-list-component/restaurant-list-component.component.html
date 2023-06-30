@@ -1,13 +1,13 @@
 <h1>Liste des restaurants</h1>
 
 <div *ngIf="errorMessage">{{ errorMessage }}</div>
-
-<div *ngIf="restaurants.length > 0">
-  <div *ngFor="let restaurant of restaurants">
-    <h3>{{ restaurant.name }}</h3>
-    <p>{{ restaurant.location.address1 }}, {{ restaurant.location.city }} {{ restaurant.location.zip_code }}
-    </p>
-    <p>Note: {{ restaurant.rating }}</p>
-    <img [src]="restaurant.image_url">
+<div class="restaurants-list-div"*ngIf="restaurants.length > 0">
+  <div class="restaurants-item-div" *ngFor="let restaurant of restaurants">
+    <img class="restaurant-img" [src]="restaurant.image_url">
+    <div class="restaurant-item-info">
+    <p class="name">{{ restaurant.name }}</p>
+    <p class="address">{{ restaurant.location.address1 }}, {{ restaurant.location.city }} {{ restaurant.location.zip_code }}</p>
+    <p class="rating">Note: {{ getStarRating(restaurant.rating) }}</p>
+      </div>
   </div>
 </div>
