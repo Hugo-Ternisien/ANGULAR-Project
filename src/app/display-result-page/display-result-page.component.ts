@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { YelpService } from '../service/yelp.service';
 
@@ -14,12 +14,15 @@ export class DisplayResultPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private yelpService: YelpService
+    private yelpService: YelpService,
+    private elementRef: ElementRef
   ) { }
 
   ngOnInit(): void {
-    const address = this.route.snapshot.queryParams['address'];
-    this.searchRestaurants(address);
+    this.route.queryParams.subscribe(params => {
+      const address = params['address'];
+      this.searchRestaurants(address);
+    });
   }
 
   public searchRestaurants(address: string): void {
@@ -27,6 +30,9 @@ export class DisplayResultPageComponent implements OnInit {
       .subscribe(
         (data: { businesses: any[]; }) => {
           this.restaurants = data.businesses;
+          setTimeout(() => {
+            this.scrollToTop();
+          }, 0);
         },
         (error: string) => {
           this.restaurants = [];
@@ -42,6 +48,12 @@ export class DisplayResultPageComponent implements OnInit {
     const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
 
     return '★'.repeat(fullStars) + (hasHalfStar ? '½' : '') + '☆'.repeat(emptyStars);
+  }
+
+  public scrollToTop(): void {
+    const element = this.elementRef.nativeElement.querySelector('.restaurants-list-div');
+    const top = element.offsetTop;
+    window.scrollTo({ top, behavior: 'smooth' });
   }
 
 }
