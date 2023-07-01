@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -13,7 +13,7 @@ export class RestaurantListComponentComponent {
   public cities: string[] = ['Paris', 'Marseille', 'Lyon', 'Toulouse', 'Bordeaux', 'Nice', 'Strasbourg', 'Montpellier', 'Rennes', 'Londres', 'Rome', 'Milan', 'New York', 'San Francisco', 'Tokyo'];
   public selectedCity: string = 'Paris';
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,private elementRef: ElementRef) { }
 
   ngOnInit(): void {
     this.category = this.route.snapshot.url[0].path;
@@ -38,7 +38,10 @@ export class RestaurantListComponentComponent {
       .then(response => response.json())
       .then(data => {
         this.restaurants = data.businesses;
-      })
+        setTimeout(() => {
+          this.scrollToTop();
+        }, 0);
+      } )
       .catch(error => {
         this.errorMessage = 'Une erreur s\'est produite lors de la recherche des restaurants.';
         console.error(error);
@@ -54,6 +57,12 @@ export class RestaurantListComponentComponent {
   }
   public onCityChange(): void {
     this.searchRestaurants();
+  }
+
+  public scrollToTop(): void {
+    const element = this.elementRef.nativeElement.querySelector('.restaurants-list-div');
+    const top = element.offsetTop;
+    window.scrollTo({ top, behavior: 'smooth' });
   }
 }
 

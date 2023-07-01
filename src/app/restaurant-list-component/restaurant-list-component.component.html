@@ -1,17 +1,19 @@
-<h1>Liste des restaurants</h1>
-<select [(ngModel)]="selectedCity" (change)="onCityChange()">
-  <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
-</select>
+<div class="list-header-div">
+  <h1>Liste des restaurants</h1>
+  <select class="select-restaurant" [(ngModel)]="selectedCity" (change)="onCityChange()">
+    <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+  </select>
+</div>
 
 <div *ngIf="errorMessage">{{ errorMessage }}</div>
 <div class="restaurants-list-div"*ngIf="restaurants.length > 0">
   <div class="restaurants-item-div" *ngFor="let restaurant of restaurants">
     <img class="restaurant-img" [src]="restaurant.image_url">
     <div class="restaurant-item-info">
-      
-    <p class="name">{{ restaurant.name }}</p>
-    <p class="address">{{ restaurant.location.address1 }}, {{ restaurant.location.city }} {{ restaurant.location.zip_code }}</p>
-    <p class="rating">Note: {{ getStarRating(restaurant.rating) }}</p>
-      </div>
+      <p class="name">{{ restaurant.name }}</p>
+      <p class="address">{{ restaurant.location.address1 }}, {{ restaurant.location.city }} {{ restaurant.location.zip_code }}</p>
+      <p class="price">Prix : {{ restaurant.price }}</p>
+      <p class="rating">Note: {{ getStarRating(restaurant.rating) }}</p>
+    </div>
   </div>
 </div>

@@ -1,3 +1,31 @@
+.list-header-div {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.select-restaurant {
+  margin-left: 25px;
+  appearance: none;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  color: #333;
+  cursor: pointer;
+}
+
+.select-restaurant:hover {
+  outline: none;
+  box-shadow: 0 0 4px rgba(58, 92, 136, 0.4);
+}
+
+
+
 .restaurants-list-div {
   display: flex;
   flex-direction: column;
