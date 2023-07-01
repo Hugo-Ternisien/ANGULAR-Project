@@ -36,10 +36,6 @@ export class AddressSearchComponent {
   }
 
   validateAddress() {
-    // if (this.searchQuery) {
-    //   const url = `/display-result-page?address=${encodeURIComponent(this.searchQuery)}`;
-    //   window.open(url, '_blank');
-    // }
     if (this.searchQuery) {
       const queryParams = { address: encodeURIComponent(this.searchQuery) };
       this.router.navigate(['/display-result-page'], { queryParams });
