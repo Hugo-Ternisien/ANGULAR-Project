@@ -60,7 +60,7 @@ export class RestaurantListComponentComponent {
   }
 
   public scrollToTop(): void {
-    const element = this.elementRef.nativeElement.querySelector('.restaurants-list-div');
+    const element = this.elementRef.nativeElement.querySelector('.list-header-div');
     const top = element.offsetTop;
     window.scrollTo({ top, behavior: 'smooth' });
   }
