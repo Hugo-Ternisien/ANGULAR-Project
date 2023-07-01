@@ -10,7 +10,7 @@ export class RestaurantListComponentComponent {
   public category: string = "";
   public restaurants: any[] = [];
   public errorMessage: string = "";
-  public cities: string[] = ['Paris', 'Marseille', 'Lyon', 'Toulouse', 'Bordeaux', 'Nice', 'Strasbourg', 'Montpellier', 'Rennes', 'Londres', 'Rome', 'Milan', 'New York', 'San Francisco', 'Tokyo', 'Séoul'];
+  public cities: string[] = ['Paris', 'Marseille', 'Lyon', 'Toulouse', 'Bordeaux', 'Nice', 'Strasbourg', 'Montpellier', 'Rennes', 'Londres', 'Rome', 'Milan', 'New York', 'San Francisco', 'Tokyo'];
   public selectedCity: string = 'Paris';
 
   constructor(private route: ActivatedRoute) { }
