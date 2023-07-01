@@ -22,7 +22,7 @@ BestEats is a web application developed as a group project. The main objective o
 3. Install dependencies: `npm install`
 4. Start the application: `ng serve`
 5. Access the web app locally: Open your browser and visit `http://localhost:4200`
-6. Open the browser console and click on the forbidden 403 Response Status to ask for a server demo
+6. Open the browser console and click on the forbidden 403 Response Status to ask for a server demo or simply click [here](https://cors-anywhere.herokuapp.com/corsdemo)
 7. Enjoy!
 
 ## Team Members
