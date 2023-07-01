@@ -10,6 +10,8 @@ export class RestaurantListComponentComponent {
   public category: string = "";
   public restaurants: any[] = [];
   public errorMessage: string = "";
+  public cities: string[] = ['Paris', 'Marseille', 'Lyon', 'Toulouse', 'Bordeaux', 'Nice', 'Strasbourg', 'Montpellier', 'Rennes', 'Londres', 'Rome', 'Milan', 'New York', 'San Francisco', 'Tokyo', 'Séoul'];
+  public selectedCity: string = 'Paris';
 
   constructor(private route: ActivatedRoute) { }
 
@@ -30,7 +32,7 @@ export class RestaurantListComponentComponent {
       headers: headers
     };
 
-    const url = `${apiUrl}?term=restaurants&categories=${this.category}&location=Paris`;
+    const url = `${apiUrl}?term=restaurants&categories=${this.category}&location=${this.selectedCity}`;
 
     fetch(url, requestOptions)
       .then(response => response.json())
@@ -50,4 +52,8 @@ export class RestaurantListComponentComponent {
 
     return '★'.repeat(fullStars) + (hasHalfStar ? '½' : '') + '☆'.repeat(emptyStars);
   }
+  public onCityChange(): void {
+    this.searchRestaurants();
+  }
 }
+
